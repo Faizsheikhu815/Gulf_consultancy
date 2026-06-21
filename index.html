@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Shahenshah Gulf Consultancy – Your Gateway to Gulf Careers</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0d2b4e;--navy2:#163a63;--gold:#c9963a;--gold-light:#f0d9b0;--gold-pale:#fdf6ec;
+  --text:#1a1a2e;--muted:#5a6480;--border:#e4e8f0;--bg:#f8f9fc;--white:#fff;
+  --font:'Segoe UI',system-ui,sans-serif
+}
+body{font-family:var(--font);color:var(--text);background:var(--white);line-height:1.7}
+a{color:inherit;text-decoration:none}
+img{display:block}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--border);padding:0 5%}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-mark{width:40px;height:40px;background:var(--navy);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px}
+.logo-mark span{display:block;width:22px;height:3px;background:var(--gold);border-radius:2px}
+.logo-mark span:nth-child(2){width:14px}
+.logo-text{line-height:1.2}
+.logo-name{font-size:16px;font-weight:700;color:var(--navy);letter-spacing:.3px}
+.logo-sub{font-size:11px;color:var(--gold);font-weight:600;letter-spacing:1px;text-transform:uppercase}
+.nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+.nav-links a{font-size:14px;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--navy)}
+.nav-cta{background:var(--gold);color:var(--white)!important;padding:9px 22px;border-radius:6px;font-weight:600;font-size:14px;transition:background .2s}
+.nav-cta:hover{background:#a87a2a!important}
+
+/* HERO */
+.hero{padding:90px 5% 80px;background:linear-gradient(135deg,#0d2b4e 0%,#163a63 50%,#1a4a7a 100%);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-60px;right:-80px;width:500px;height:500px;border-radius:50%;background:rgba(201,150,58,.07);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-100px;left:-60px;width:400px;height:400px;border-radius:50%;background:rgba(201,150,58,.05);pointer-events:none}
+.hero-inner{max-width:780px;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,150,58,.15);border:1px solid rgba(201,150,58,.3);color:var(--gold-light);font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:7px 18px;border-radius:20px;margin-bottom:28px}
+.hero h1{font-size:clamp(34px,5vw,58px);font-weight:700;line-height:1.12;color:#fff;margin-bottom:20px}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero p{font-size:18px;color:#a8bdd4;max-width:560px;margin-bottom:40px}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+.btn-gold{background:var(--gold);color:#fff;padding:14px 32px;border-radius:8px;font-size:15px;font-weight:600;border:none;cursor:pointer;transition:background .2s}
+.btn-gold:hover{background:#a87a2a}
+.btn-ghost{border:2px solid rgba(255,255,255,.3);color:#fff;padding:13px 32px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;background:none;transition:all .2s}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.hero-flags{display:flex;gap:10px;margin-top:48px;flex-wrap:wrap}
+.flag-pill{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#c8d8e8;font-size:13px;padding:6px 14px;border-radius:20px}
+
+/* TRUST BAR */
+.trust{background:var(--gold-pale);border-top:1px solid var(--gold-light);border-bottom:1px solid var(--gold-light);padding:40px 5%}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:860px;margin:0 auto;text-align:center}
+.trust-item{}
+.trust-num{font-size:38px;font-weight:700;color:var(--navy)}
+.trust-label{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-top:4px}
+
+/* GENERIC SECTION */
+section{padding:80px 5%}
+.section-label{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.section-title{font-size:clamp(24px,3vw,36px);font-weight:700;line-height:1.2;color:var(--navy);margin-bottom:14px}
+.section-sub{font-size:17px;color:var(--muted);max-width:580px;margin-bottom:48px}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about-visual{border-radius:16px;overflow:hidden;position:relative}
+.about-img{height:380px;background:linear-gradient(145deg,var(--navy),var(--navy2));border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:100px}
+.about-badge{position:absolute;bottom:24px;left:24px;background:var(--gold);color:#fff;border-radius:10px;padding:14px 20px}
+.about-badge strong{display:block;font-size:22px;font-weight:700}
+.about-badge span{font-size:12px;opacity:.85}
+.about-text p{font-size:16px;color:var(--muted);margin-bottom:18px}
+.about-checks{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.check-item{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:500}
+.check-box{width:22px;height:22px;border-radius:6px;background:var(--navy);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:12px;flex-shrink:0}
+
+/* SERVICES */
+.services-bg{background:var(--bg)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.svc-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:30px 26px;transition:box-shadow .25s,transform .25s,border-color .25s}
+.svc-card:hover{box-shadow:0 10px 36px rgba(13,43,78,.1);transform:translateY(-4px);border-color:var(--gold-light)}
+.svc-icon{width:52px;height:52px;background:var(--gold-pale);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:18px}
+.svc-card h3{font-size:17px;font-weight:600;color:var(--navy);margin-bottom:10px}
+.svc-card p{font-size:14px;color:var(--muted);line-height:1.7}
+
+/* DESTINATIONS */
+.dest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.dest-card{border:1px solid var(--border);border-radius:14px;padding:28px 24px;display:flex;align-items:center;gap:18px;transition:all .2s;cursor:default}
+.dest-card:hover{border-color:var(--gold);background:var(--gold-pale)}
+.dest-flag{font-size:42px;line-height:1}
+.dest-info h3{font-size:16px;font-weight:600;color:var(--navy)}
+.dest-info p{font-size:13px;color:var(--muted);margin-top:2px}
+
+/* INDUSTRIES */
+.ind-bg{background:var(--navy)}
+.ind-title{color:#fff}
+.ind-sub{color:#a8bdd4}
+.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.ind-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:22px 18px;text-align:center;transition:all .2s}
+.ind-card:hover{background:rgba(201,150,58,.12);border-color:rgba(201,150,58,.4)}
+.ind-icon{font-size:32px;margin-bottom:10px}
+.ind-card h4{font-size:14px;font-weight:600;color:#fff}
+
+/* HOW IT WORKS */
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.steps-grid::before{content:'';position:absolute;top:32px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,var(--gold-light),var(--gold),var(--gold-light));z-index:0}
+.step{text-align:center;position:relative;z-index:1;padding:0 16px}
+.step-num{width:64px;height:64px;border-radius:50%;background:var(--navy);border:3px solid var(--gold);color:var(--gold);font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.step h3{font-size:16px;font-weight:600;color:var(--navy);margin-bottom:8px}
+.step p{font-size:14px;color:var(--muted)}
+
+/* TESTIMONIALS */
+.testi-bg{background:var(--bg)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testi-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:30px 26px}
+.stars{color:var(--gold);font-size:16px;margin-bottom:14px;letter-spacing:2px}
+.testi-card p{font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:20px;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:12px}
+.avatar{width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--gold);font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.testi-name{font-size:14px;font-weight:600;color:var(--navy)}
+.testi-role{font-size:12px;color:var(--muted)}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:start}
+.contact-info h2{font-size:28px;font-weight:700;color:var(--navy);margin-bottom:14px}
+.contact-info>p{font-size:16px;color:var(--muted);margin-bottom:32px}
+.c-detail{display:flex;gap:14px;align-items:flex-start;margin-bottom:22px}
+.c-icon{width:42px;height:42px;background:var(--gold-pale);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;border:1px solid var(--gold-light)}
+.c-detail strong{display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--gold);margin-bottom:3px}
+.c-detail span{font-size:15px;color:var(--muted)}
+.apply-form{background:var(--navy);border-radius:16px;padding:40px}
+.apply-form h3{font-size:20px;font-weight:700;color:#fff;margin-bottom:6px}
+.apply-form>p{font-size:14px;color:#a8bdd4;margin-bottom:28px}
+.fg{margin-bottom:18px}
+.fg label{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:#a8bdd4;display:block;margin-bottom:6px}
+.fg input,.fg select,.fg textarea{width:100%;padding:11px 14px;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;font-size:15px;font-family:inherit;outline:none;transition:border-color .2s}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.3)}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold)}
+.fg select option{background:#163a63;color:#fff}
+.fg textarea{resize:vertical;min-height:100px}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.apply-btn{width:100%;padding:14px;background:var(--gold);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s;margin-top:4px;letter-spacing:.3px}
+.apply-btn:hover{background:#a87a2a}
+
+/* FOOTER */
+footer{background:#071829;color:#6b8ab0;padding:52px 5% 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:44px}
+.f-brand p{font-size:14px;color:#4a6a8a;margin-top:14px;max-width:230px;line-height:1.75}
+.f-logo{display:flex;align-items:center;gap:12px}
+.f-mark{width:36px;height:36px;background:var(--navy2);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px}
+.f-mark span{display:block;height:2.5px;background:var(--gold);border-radius:2px}
+.f-mark span:first-child{width:18px}
+.f-mark span:last-child{width:11px}
+.f-name{font-size:15px;font-weight:700;color:#fff}
+.f-col h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#fff;margin-bottom:16px}
+.f-col ul{list-style:none}
+.f-col li{margin-bottom:10px}
+.f-col a{font-size:14px;color:#4a6a8a;transition:color .2s}
+.f-col a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid #0f2a42;padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#2e4a63}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .services-grid,.testi-grid,.dest-grid{grid-template-columns:1fr}
+  .ind-grid{grid-template-columns:repeat(2,1fr)}
+  .steps-grid{grid-template-columns:repeat(2,1fr)}
+  .steps-grid::before{display:none}
+  .trust-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .fg-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo">
+      <div class="logo-mark">
+        <span></span><span></span>
+      </div>
+      <div class="logo-text">
+        <div class="logo-name">Shahenshah Gulf Consultancy</div>
+        <div class="logo-sub">Career Gateway</div>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#destinations">Destinations</a></li>
+      <li><a href="#industries">Industries</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="nav-cta">Apply Now</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+          <div class="hero-badge">✦ Shahenshah Gulf Consultancy</div>
+    <h1>Your Gateway to a <em>Thriving Career</em> in the Gulf</h1>
+    <p>Shahenshah Gulf Consultancy connects ambitious professionals with top employers across the UAE, Saudi Arabia, Qatar, and beyond — fast, reliable, and transparent.</p>
+    <div class="hero-btns">
+      <button class="btn-gold">Apply for a Job</button>
+      <button class="btn-ghost">Talk to a Consultant</button>
+    </div>
+    <div class="hero-flags">
+      <span class="flag-pill">🇦🇪 UAE</span>
+      <span class="flag-pill">🇸🇦 Saudi Arabia</span>
+      <span class="flag-pill">🇶🇦 Qatar</span>
+      <span class="flag-pill">🇰🇼 Kuwait</span>
+      <span class="flag-pill">🇧🇭 Bahrain</span>
+      <span class="flag-pill">🇴🇲 Oman</span>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section class="trust">
+  <div class="trust-grid">
+    <div class="trust-item"><div class="trust-num">1,000+</div><div class="trust-label">Successful Placements</div></div>
+    <div class="trust-item"><div class="trust-num">6</div><div class="trust-label">Gulf Countries</div></div>
+    <div class="trust-item"><div class="trust-num">5+</div><div class="trust-label">Years of Experience</div></div></div>
+    <div class="trust-item"><div class="trust-num">97%</div><div class="trust-label">Client Satisfaction</div></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-visual">
+      <div class="about-img">🌍</div>
+      <div class="about-badge">
+        <strong>18+ Years</strong>
+        <span>Gulf Expertise</span>
+      </div>
+    </div>
+    <div class="about-text">
+      <div class="section-label">About Us</div>
+      <h2 class="section-title">We Open Doors to the Gulf for You</h2>
+      <p>Gulf Consultancy is a leading recruitment and job placement firm specializing exclusively in Gulf markets. With over 18 years of experience, we have helped thousands of professionals from South Asia, Southeast Asia, and Africa build rewarding careers in the Middle East.</p>
+      <p>Our team of experienced consultants understands both local employer expectations and the needs of job seekers — making us the bridge that gets you hired faster, legally, and with full transparency.</p>
+      <div class="about-checks">
+        <div class="check-item"><div class="check-box">✓</div>Government-licensed & accredited recruitment agency</div>
+        <div class="check-item"><div class="check-box">✓</div>Direct partnerships with 500+ Gulf employers</div>
+        <div class="check-item"><div class="check-box">✓</div>End-to-end support from application to arrival</div>
+        <div class="check-item"><div class="check-box">✓</div>100% transparent — no hidden fees</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services-bg">
+  <div style="text-align:center;margin-bottom:48px">
+    <div class="section-label">What We Offer</div>
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-sub" style="margin:0 auto">Everything you need to land your dream Gulf job — all under one roof.</p>
+  </div>
+  <div class="services-grid">
+    <div class="svc-card">
+      <div class="svc-icon">📋</div>
+      <h3>Job Matching</h3>
+      <p>We analyze your skills, experience, and preferences to match you with the right employers and roles across the Gulf region.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">📝</div>
+      <h3>CV & Profile Building</h3>
+      <p>Our experts craft compelling CVs and professional profiles tailored to Gulf employer expectations and industry standards.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">🎤</div>
+      <h3>Interview Preparation</h3>
+      <p>We prepare you for Gulf interviews with mock sessions, coaching, and insider tips on what employers in each country look for.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">🛂</div>
+      <h3>Visa Assistance</h3>
+      <p>We guide you through work visa applications, document verification, and attestation — ensuring a smooth and legal process.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">✈️</div>
+      <h3>Pre-Departure Support</h3>
+      <p>From travel arrangements to accommodation guidance and cultural orientation, we prepare you for your new life in the Gulf.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">🤝</div>
+      <h3>Post-Placement Care</h3>
+      <p>We stay connected after placement to ensure your transition is smooth and address any workplace concerns you may face.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DESTINATIONS -->
+<section id="destinations">
+  <div class="section-label">Where We Place</div>
+  <h2 class="section-title">Gulf Destinations</h2>
+  <p class="section-sub">We have active employer networks across all six GCC nations.</p>
+  <div class="dest-grid">
+    <div class="dest-card">
+      <div class="dest-flag">🇦🇪</div>
+      <div class="dest-info"><h3>United Arab Emirates</h3><p>Dubai, Abu Dhabi, Sharjah & more</p></div>
+    </div>
+    <div class="dest-card">
+      <div class="dest-flag">🇸🇦</div>
+      <div class="dest-info"><h3>Saudi Arabia</h3><p>Riyadh, Jeddah, Dammam & Vision 2030 projects</p></div>
+    </div>
+    <div class="dest-card">
+      <div class="dest-flag">🇶🇦</div>
+      <div class="dest-info"><h3>Qatar</h3><p>Doha and major infrastructure sectors</p></div>
+    </div>
+    <div class="dest-card">
+      <div class="dest-flag">🇰🇼</div>
+      <div class="dest-info"><h3>Kuwait</h3><p>Kuwait City and government projects</p></div>
+    </div>
+    <div class="dest-card">
+      <div class="dest-flag">🇧🇭</div>
+      <div class="dest-info"><h3>Bahrain</h3><p>Finance, hospitality and IT sectors</p></div>
+    </div>
+    <div class="dest-card">
+      <div class="dest-flag">🇴🇲</div>
+      <div class="dest-info"><h3>Oman</h3><p>Muscat and growing industrial sectors</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section id="industries" class="ind-bg">
+  <div style="text-align:center;margin-bottom:48px">
+    <div class="section-label" style="color:var(--gold)">Sectors We Cover</div>
+    <h2 class="section-title ind-title">Industries We Recruit For</h2>
+    <p class="section-sub ind-sub" style="margin:0 auto">From skilled labour to senior management, we recruit across every major Gulf industry.</p>
+  </div>
+  <div class="ind-grid">
+    <div class="ind-card"><div class="ind-icon">🏗️</div><h4>Construction & Engineering</h4></div>
+    <div class="ind-card"><div class="ind-icon">🏥</div><h4>Healthcare & Medical</h4></div>
+    <div class="ind-card"><div class="ind-icon">💻</div><h4>Information Technology</h4></div>
+    <div class="ind-card"><div class="ind-icon">🛢️</div><h4>Oil, Gas & Energy</h4></div>
+    <div class="ind-card"><div class="ind-icon">🏨</div><h4>Hospitality & Tourism</h4></div>
+    <div class="ind-card"><div class="ind-icon">💰</div><h4>Banking & Finance</h4></div>
+    <div class="ind-card"><div class="ind-icon">🚢</div><h4>Logistics & Transport</h4></div>
+    <div class="ind-card"><div class="ind-icon">🏫</div><h4>Education & Training</h4></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div style="text-align:center;margin-bottom:64px">
+    <div class="section-label">The Process</div>
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-sub" style="margin:0 auto">Getting placed in a Gulf job is simpler than you think — just four steps.</p>
+  </div>
+  <div class="steps-grid">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Register & Apply</h3>
+      <p>Fill out our simple application form with your details, skills, and preferred destination.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Profile Review</h3>
+      <p>Our consultants review your profile and shortlist the most suitable opportunities for you.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Interview & Selection</h3>
+      <p>We prepare you for employer interviews and coordinate the selection process end to end.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h3>Visa & Deployment</h3>
+      <p>We handle visa documentation, travel support, and ensure you arrive ready to work.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi-bg">
+  <div style="text-align:center;margin-bottom:48px">
+    <div class="section-label">Success Stories</div>
+    <h2 class="section-title">What Our Candidates Say</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p>"Gulf Consultancy placed me in a top construction firm in Dubai within 6 weeks. The whole process was smooth and completely transparent. I'm now earning 3x what I made back home."</p>
+      <div class="testi-author">
+        <div class="avatar">RK</div>
+        <div><div class="testi-name">Ramesh Kumar</div><div class="testi-role">Site Engineer · Dubai, UAE</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p>"I was skeptical at first, but the team at Gulf Consultancy was honest, professional, and very supportive. My visa arrived in record time and I had a job offer before I even left home."</p>
+      <div class="testi-author">
+        <div class="avatar">AS</div>
+        <div><div class="testi-name">Ayesha Siddiqui</div><div class="testi-role">Registered Nurse · Riyadh, KSA</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p>"The interview coaching made a huge difference. I was fully prepared when I met the employer in Qatar. Two years later, I'm still here and loving every bit of my Gulf experience."</p>
+      <div class="testi-author">
+        <div class="avatar">JM</div>
+        <div><div class="testi-name">Jerome Mathew</div><div class="testi-role">IT Analyst · Doha, Qatar</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="section-label">Get In Touch</div>
+      <h2>Ready to Start Your Gulf Journey?</h2>
+      <p>Fill in the form and one of our consultants will reach out within 24 hours. Or contact us directly below.</p>
+      <div class="c-detail">
+        <div class="c-icon">📍</div>
+        <div><strong>Office Address</strong><span>Gulf Consultancy, Main Road, Your City</span></div>
+      </div>
+      <div class="c-detail">
+        <div class="c-icon">📞</div>
+        <div><strong>Phone / WhatsApp</strong><span>+91 XXXXX XXXXX</span></div>
+      </div>
+      <div class="c-detail">
+        <div class="c-icon">📧</div>
+        <div><strong>Email</strong><span>info@gulfconsultancy.com</span></div>
+      </div>
+      <div class="c-detail">
+        <div class="c-icon">🕐</div>
+        <div><strong>Working Hours</strong><span>Mon – Sat, 9:00 AM – 6:00 PM</span></div>
+      </div>
+    </div>
+    <div class="apply-form">
+      <h3>Apply Now</h3>
+      <p>Tell us about yourself and the job you're looking for.</p>
+      <div class="fg-row">
+        <div class="fg"><label>First Name</label><input type="text" placeholder="Mohammed"/></div>
+        <div class="fg"><label>Last Name</label><input type="text" placeholder="Ali"/></div>
+      </div>
+      <div class="fg"><label>Email Address</label><input type="email" placeholder="you@example.com"/></div>
+      <div class="fg"><label>Phone / WhatsApp</label><input type="tel" placeholder="+91 00000 00000"/></div>
+      <div class="fg-row">
+        <div class="fg">
+          <label>Preferred Country</label>
+          <select>
+            <option>UAE</option>
+            <option>Saudi Arabia</option>
+            <option>Qatar</option>
+            <option>Kuwait</option>
+            <option>Bahrain</option>
+            <option>Oman</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>Industry</label>
+          <select>
+            <option>Construction</option>
+            <option>Healthcare</option>
+            <option>IT</option>
+            <option>Oil & Gas</option>
+            <option>Hospitality</option>
+            <option>Finance</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="fg"><label>Your Message</label><textarea placeholder="Tell us about your experience, skills, and what you're looking for…"></textarea></div>
+      <button class="apply-btn">Submit Application →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="f-brand">
+      <div class="f-logo">
+        <div class="f-mark"><span></span><span></span></div>
+        <div class="f-name">Shahenshah Gulf Consultancy</div>
+      </div>
+      <p>Your trusted partner for Gulf job placement and career development since 2008.</p>
+    </div>
+    <div class="f-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h4>Job Seekers</h4>
+      <ul>
+        <li><a href="#contact">Apply Now</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#industries">Industries</a></li>
+        <li><a href="#">FAQs</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="#">WhatsApp Us</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">YouTube</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Shahenshah Gulf Consultancy. All rights reserved.</span>
+    <span>Licensed Recruitment Agency · Govt. Reg. No. XXXXX</span>
+  </div>
+</footer>
+
+</body>
+</html>
